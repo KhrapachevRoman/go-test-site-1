@@ -1,0 +1,28 @@
+{{ define "index"}}
+
+
+{{ template "header" }}
+
+<main class="inner cover">
+    <h1 class="cover-heading">Главная страница</h1>
+    <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. A ab adipisci sequi, 
+        ipsum harum molestias ipsa pariatur repellat incidunt tempore doloremque dolore laudantium
+         ratione voluptatem accusantium. Laborum vero facere molestias!</p>
+
+        {{ range . }}
+        <div class="alert alert-danger">
+            <h2>{{ .Title }}</h2>
+            <p>{{ .Anons }}</p>
+            <a href="/articles/{{ .Id }}" class="btn btn-danger">Читать далее</a>
+        </div>
+        {{ else }}
+        <p class="lead">Статей нет!</p>
+        {{ end }}
+    <p class="lead">
+        <a href="#" class="btn btn-lg btn-secondary">Узнать больше</a>
+    </p>
+</main>
+
+{{ template "footer" }}
+
+{{ end }}
